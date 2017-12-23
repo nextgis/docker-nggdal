@@ -6,14 +6,10 @@
 # <https://github.com/nextgis-borsch/lib_gdal>
 #
 
-# Ubuntu 16.04 Trusty Tahyr
+# Ubuntu 16.04 Xenial Xerus
 FROM ubuntu:xenial
 
 MAINTAINER Maxim Dubinin <maxim.dubinin@nextgis.com>
-
-# Install the application.
-ADD . /usr/local/src/nggdal-docker/
-RUN /usr/local/src/nggdal-docker/build.sh
 
 # Externally accessible data is by default put in /data
 WORKDIR /data
