@@ -16,13 +16,14 @@ WORKDIR /data
 VOLUME ["/data"]
 
 # add nextgis repo
+RUN apt-get update -y
+RUN apt-get -y install software-properties-common python-software-properties
 RUN add-apt-repository -y ppa:nextgis/ppa
+RUN apt-get update -y
 
 # Install stuff
-RUN apt-get update -y
-RUN apt-get install software-properties-common python-software-properties
-RUN apt-get install gdal-bin python-gdal
-RUN apt-get install nextgisutilities-bin
+RUN apt-get -y install gdal-bin python-gdal
+RUN apt-get -y install nextgisutilities-bin
 
 # Clean up
 RUN apt-get autoremove -y
